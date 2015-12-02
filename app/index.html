@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="zikaronBasalonFrontendAngularApp">
+  <body ng-app="zikaronBasalonFrontendAngularApp" ng-controller="AppCtrl as app">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -40,8 +40,13 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li>
+                <a ng-if="!app.signedIn" ng-href="#/signup">Signup</a>
+                <a ng-if="app.signedIn" ng-href="#/signout">Signout</a>
+              </li>
+              <li ng-if="!app.signedIn">
+                <a ng-href="#/login">Login</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -86,9 +91,13 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/services/hostservice.js"></script>
+        <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/services/authservice.js"></script>
+        <script src="scripts/controllers/signout.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>

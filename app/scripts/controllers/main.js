@@ -8,9 +8,10 @@
  * Controller of the zikaronBasalonFrontendAngularApp
  */
 angular.module('zikaronBasalonFrontendAngularApp')
-  .controller('MainCtrl', function ($scope, hostService) {
+  .controller('MainCtrl', function (hostService) {
+  	var main = this;
     hostService.getAll().then(function(result) {
-    	$scope.hosts = result;
+    	main.hosts = result;
     });
 
   });
