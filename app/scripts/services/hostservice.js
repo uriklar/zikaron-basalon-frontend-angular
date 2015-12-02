@@ -19,4 +19,12 @@ angular.module('zikaronBasalonFrontendAngularApp')
     		return result.data.hosts;
     	});
     };
+
+    this.create = function(host) {
+        return $http({
+            method: 'post',
+            url: 'http://localhost:3000/hosts',
+            data: { host: host }
+        });
+    };
   });

@@ -61,4 +61,8 @@ angular.module('zikaronBasalonFrontendAngularApp')
     this.signedIn = function() {
     	return authService._accessToken;
     };
+
+    this.userId = function() {
+        return authService._userId;
+    };
   });

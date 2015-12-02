@@ -39,6 +39,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+      .when('/new-host', {
+        templateUrl: 'views/new-host.html',
+        controller: 'NewHostCtrl',
+        controllerAs: 'newHost'
+      })
       .otherwise({
         redirectTo: '/'
       });
