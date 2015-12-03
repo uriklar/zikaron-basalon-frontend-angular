@@ -8,61 +8,49 @@
  * Service in the zikaronBasalonFrontendAngularApp.
  */
 angular.module('zikaronBasalonFrontendAngularApp')
-  .service('authService', function ($http) {
+  .service('authService', function ($http, zbConfig, authStore) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var authService = this;
-    authService._accessToken = localStorage.getItem('ZBaccessToken');
-    authService._userId = localStorage.getItem('ZBuserId');
-
-    // TODO: refactor api endpoint url
     this.signup = function(user) {
     	return $http({
             method: 'post',
-            url: 'http://localhost:3000/users',
+            url: zbConfig.apiUrl + zbConfig.apiEndpoints.users,
             data: {
             	user: user
             }
     	}).then(function successCallback(result) {
-    		authService._accessToken = result.data.access_token;
-    		authService._userId = result.data.user_id;
-    		localStorage.setItem('ZBaccessToken', result.data.access_token);
-            localStorage.setItem('ZBuserId', result.data.user_id);
+            authStore.setAccessToken(result.data.access_token);
+            authStore.setUserId(result.data.user_id);
     	}, function errorCallback (error) {
     		console.log(error);
     	});
     };
 
     this.signout = function() {
-    	authService._accessToken = null;
-  		authService._userId = null;
-  		localStorage.removeItem('ZBaccessToken');
-      localStorage.removeItem('ZBuserId');
+        authStore.setAccessToken(null);
+        authStore.setUserId(null);
     };
 
-    // TODO: refactor api endpoint url
     this.login = function(email, password) {
         return $http({
             method: 'post',
-            url: 'http://localhost:3000/login',
+            url: zbConfig.apiUrl + zbConfig.apiEndpoints.login,
             data: {
                 email: email,
                 password: password
             }
         }).then(function successCallback(result) {
-            authService._accessToken = result.data.access_token;
-            authService._userId = result.data.user_id;
-            localStorage.setItem('ZBaccessToken', result.data.access_token);
-            localStorage.setItem('ZBuserId', result.data.user_id);
+            authStore.setAccessToken(result.data.access_token);
+            authStore.setUserId(result.data.user_id);
         }, function errorCallback (error) {
             console.log(error);
         });
     };
 
     this.signedIn = function() {
-    	return authService._accessToken;
+    	return authStore.getAccessToken();
     };
 
     this.userId = function() {
-        return authService._userId;
+        return authStore.getUserId();
     };
   });

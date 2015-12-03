@@ -8,13 +8,12 @@
  * Service in the zikaronBasalonFrontendAngularApp.
  */
 angular.module('zikaronBasalonFrontendAngularApp')
-  .service('hostService', function ($http) {
+  .service('hostService', function ($http, zbConfig) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    // TODO: refactor api endpoint url
     this.getAll = function() {
     	return $http({
             method: 'get',
-            url: 'http://localhost:3000/hosts',
+            url: zbConfig.apiUrl + zbConfig.apiEndpoints.hosts,
     	}).then(function(result) {
     		return result.data.hosts;
     	});
@@ -23,8 +22,18 @@ angular.module('zikaronBasalonFrontendAngularApp')
     this.create = function(host) {
         return $http({
             method: 'post',
-            url: 'http://localhost:3000/hosts',
+            url: zbConfig.apiUrl + zbConfig.apiEndpoints.hosts,
             data: { host: host }
+        });
+    };
+
+    this.get = function(id) {
+        return $http({
+            method: 'get',
+            url: zbConfig.apiUrl + zbConfig.apiEndpoints.hosts + '/' + id,
+        }).then(function(result) {
+            console.log(result);
+            return result.data;
         });
     };
   });
