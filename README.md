@@ -1,12 +1,11 @@
-# zikaron-basalon-frontend-angular
+# Zikaron Basalon Frontend Angular
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+## Before you start
 
-## Build & development
+* Check ```environments.json``` file
 
-Run `grunt` for building and `grunt serve` for preview.
+## Usage
 
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+* ```npm install``` to install dependencies
+* ```npm start```   to start webpack-dev-server
+* ```npm test```    to run the test suit once

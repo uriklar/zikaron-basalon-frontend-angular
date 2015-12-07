@@ -1,113 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+    <script>
+      // Dynamic creation of base tag, to make html5mode work locally
+      // This script will remove itself upon execution
+      (function () {
+        document.write('<base href="' + document.location.origin + '/" />');
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.removeChild(node);
+      }());
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZikaronBasalonFrontendAngular</title>
   </head>
-  <body ng-app="zikaronBasalonFrontendAngularApp" ng-controller="AppCtrl as app">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <body>
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+    <ng-include src="'/partials/_header.html'"></ng-include>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+    <main>
+      <ui-view></ui-view>
+    </main>
 
-            <a class="navbar-brand" href="#/">zikaronBasalonFrontendAngular</a>
-          </div>
+    <ng-include src="'/partials/_footer.html'"></ng-include>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li>
-                <a ng-if="!app.signedIn" ng-href="#/signup">Signup</a>
-                <a ng-if="app.signedIn" ng-href="#/signout">Signout</a>
-              </li>
-              <li ng-if="!app.signedIn">
-                <a ng-href="#/login">Login</a>
-              </li>
-              <li ng-if="app.signedIn">
-                <a ng-href="#/new-host">New Host</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&dummy=.js&language=he">
-    </script>
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/services/hostservice.js"></script>
-        <script src="scripts/controllers/signup.js"></script>
-        <script src="scripts/services/authservice.js"></script>
-        <script src="scripts/controllers/signout.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/new-host.js"></script>
-        <script src="scripts/controllers/host-profile.js"></script>
-        <script src="scripts/services/httprequestinterceptor.js"></script>
-        <script src="scripts/services/authstore.js"></script>
-        <script src="scripts/directives/addressfield.js"></script>
-        <!-- endbuild -->
-</body>
+  </body>
 </html>
