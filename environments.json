@@ -1,7 +1,7 @@
 {
   "development": {
     "$_ENV": "development",
-    "$_API_URL": "http://localhost:3000"
+    "$_API_URL": "http://zikaron-basalon-api.herokuapp.com"
   },
   "test": {
     "$_ENV": "test",

@@ -6,5 +6,6 @@ export /* @ngInject */ function homeRoutes($stateProvider) {
       templateUrl: '/states/home/home.html',
       controller: 'HomeController',
       controllerAs: 'Home',
-    });
+    })
+  ;
 }
