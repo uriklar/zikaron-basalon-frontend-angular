@@ -2,7 +2,7 @@
  * Created by ranwahle on 02/02/2016.
  */
 import {components} from './components';
-import {AuthService} from '../services/authService';
+import {AuthService} from '../services/auth-service';
 
  class RegisterComponent{
 
