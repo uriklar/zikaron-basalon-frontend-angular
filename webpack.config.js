@@ -63,6 +63,15 @@ const config = {
   },
 
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: [
+          'eslint'
+        ],
+        exclude
+      },
+    ],
     loaders: [
 
       // Transpile ES6 and annotate AngularJS dependencies
@@ -124,6 +133,9 @@ const config = {
     noInfo: true,
     inline: true,
     historyApiFallback: true
+  },
+  eslint: {
+    configFile: '.eslintrc'
   }
 
 };
