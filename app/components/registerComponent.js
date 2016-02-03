@@ -11,18 +11,25 @@ import {AuthService} from '../services/authService';
          this._authService = authService;
      }
 
-    register(){
+    register() {
 
         this._authService.signUp(
             this.email, this.password, this.password2
+        ).then(response =>
+                console.log(response))
+            .catch(response =>
+                console.log(response)
+            );
+    }
 
-        );
 
 
 
 
 
-}
+
+
+
 
 }
 
