@@ -14,6 +14,7 @@ export function dashboardList() {
           { val: 'has_survivor', name: 'צוות לאיש עדות' },
           { val: 'public', name: 'ערב פתוח' }
         ];
+
         this.data = [
           {
             name: 'אורי קלר',
