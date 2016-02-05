@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th ng-repeat="key in keys">
+        {{ key.name }}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="row in data">
+      <td ng-repeat="key in keys">
+        {{ row[key.val] }}
+      </td>
+    </tr>
+  </tbody>
+</table>
