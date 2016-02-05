@@ -5,7 +5,7 @@ export /* @ngInject */ function homeRoutes($stateProvider) {
       url: '/',
       templateUrl: '/states/home/home.html',
       controller: 'HomeController',
-      controllerAs: 'Home',
+      controllerAs: 'Home'
     })
   ;
 }
