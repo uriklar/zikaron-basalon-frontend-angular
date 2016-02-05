@@ -6,6 +6,7 @@ import 'angular-google-maps/dist/angular-google-maps.min';
 import _ from 'lodash';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-rtl/dist/css/bootstrap-rtl.min.css';
 import 'assets/stylesheets/application.scss';
 
 import Models           from 'models/models';
