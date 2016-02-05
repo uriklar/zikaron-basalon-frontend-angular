@@ -2,6 +2,7 @@
 
 import angular from 'angular';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import 'assets/stylesheets/application.scss';
 
 import Models           from 'models/models';
