@@ -5,6 +5,7 @@ import 'angular-ui-router';
 import { staticRoutes } from 'config/routes/static';
 import {registrationRoutes} from 'config/routes/registration';
 import { searchRoutes } from 'config/routes/search';
+import { dashboardRoutes } from 'config/routes/dashboard';
 
 const defaultRoute = /* @ngInject */ ($urlRouterProvider) => {
   $urlRouterProvider.otherwise('/404');
@@ -16,4 +17,5 @@ export default angular.module('ZikaronBasalonFrontendAngular.routes', ['ui.route
   .config(staticRoutes)
 .config(registrationRoutes)
   .config(searchRoutes)
+  .config(dashboardRoutes)
 ;
