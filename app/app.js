@@ -1,6 +1,9 @@
 /* globals __dirname */
 
 import angular from 'angular';
+import 'angular-simple-logger/dist/angular-simple-logger';
+import 'angular-google-maps/dist/angular-google-maps.min';
+import _ from 'lodash';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'assets/stylesheets/application.scss';
@@ -23,6 +26,8 @@ const templates = require.context(__dirname, true, /\.html$/);
 templates.keys().forEach(templates);
 
 angular.module('ZikaronBasalonFrontendAngular', [
+  'nemLogging',
+  'uiGmapgoogle-maps',
   Models.name,
   Services.name,
   Directives.name,
@@ -31,7 +36,7 @@ angular.module('ZikaronBasalonFrontendAngular', [
   Config.name,
   Routes.name,
   States.name,
-    RegisterComponent.name
+  RegisterComponent.name
 ]);
 
 angular.element(document).ready(() =>

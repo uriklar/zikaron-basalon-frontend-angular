@@ -5,7 +5,7 @@ import { exceptionHandlerDecorator } from 'config/decorators';
 import { constants }                 from 'config/constants';
 
 // @ngInject
-function config($compileProvider, $httpProvider, $locationProvider, $logProvider, ENV) {
+function config($compileProvider, $httpProvider, $locationProvider, $logProvider, ENV, uiGmapGoogleMapApiProvider) {
 
   if (ENV === 'production') {
     // Enable for performance boost on production
@@ -20,6 +20,12 @@ function config($compileProvider, $httpProvider, $locationProvider, $logProvider
 
   // Allows to access application URLs without the # sign
   $locationProvider.html5Mode(true);
+
+  uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+    v: '3.20', //defaults to latest 3.X anyhow
+    libraries: 'places'
+  });
 }
 
 export default angular.module('ZikaronBasalonFrontendAngular.config', [])
