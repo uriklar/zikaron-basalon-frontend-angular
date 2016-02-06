@@ -17,7 +17,6 @@ import Filters          from 'filters/filters';
 import Config           from 'config/config';
 import Routes           from 'config/routes/routes';
 import States           from 'states/states';
-import RegisterComponent from 'components/registerComponent';
 
 // Import all html files to put them in $templateCache
 // If you need to use lazy loading, you will probably need
@@ -36,8 +35,7 @@ angular.module('ZikaronBasalonFrontendAngular', [
   Filters.name,
   Config.name,
   Routes.name,
-  States.name,
-  RegisterComponent.name
+  States.name
 ]);
 
 angular.element(document).ready(() =>
