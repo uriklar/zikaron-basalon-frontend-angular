@@ -17,6 +17,7 @@ function config($compileProvider, $httpProvider, $locationProvider, $logProvider
 
   // Combine close $http calls together and run $digest once
   $httpProvider.useApplyAsync(true);
+  $httpProvider.interceptors.push('httpRequestInterceptor');
 
   // Allows to access application URLs without the # sign
   $locationProvider.html5Mode(true);

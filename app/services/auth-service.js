@@ -1,16 +1,9 @@
 import { constants } from 'config/constants';
 
 class AuthService {
-  constructor($http) {
+  constructor($http, authStore) {
     this.$http = $http;
-  }
-
-  _setAuthToken(token) {
-    localStorage.setItem('ZBaccessToken', token);
-  }
-
-  _authToken() {
-    localStorage.getItem('ZBaccessToken');
+    this._authStore = authStore;
   }
 
   signedIn() {
@@ -25,7 +18,7 @@ class AuthService {
     // Successful signup
     .then(({ data }) => {
       if (data.access_token) {
-        this._setAuthToken(data.access_token);
+        this._authStore.setAuthToken(data.access_token);
       }
     })
     // Failed signup
@@ -46,6 +39,6 @@ class AuthService {
   }
 }
 
-AuthService.$inject = ['$http'];
+AuthService.$inject = ['$http', 'authStore'];
 
 export default AuthService;

@@ -9,8 +9,7 @@ class SignupFormController {
 
     this._authService.signUp(this.form.email,
                              this.form.password,
-                             this.form.passwordConfirmation)
-        .then(response => console.log(response));
+                             this.form.passwordConfirmation);
   }
 }
 
