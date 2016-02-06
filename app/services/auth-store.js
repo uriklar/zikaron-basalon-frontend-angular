@@ -7,7 +7,7 @@ class AuthStore {
   }
 
   authToken() {
-    localStorage.getItem('ZBaccessToken');
+    return localStorage.getItem('ZBaccessToken');
   }
 }
 
