@@ -1,9 +1,8 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-// import { homeRoutes } from 'config/routes/home';
 import { staticRoutes } from 'config/routes/static';
-import {registrationRoutes} from 'config/routes/registration';
+import { hostSignupRoutes } from 'config/routes/host-signup';
 import { searchRoutes } from 'config/routes/search';
 import { dashboardRoutes } from 'config/routes/dashboard';
 
@@ -13,9 +12,8 @@ const defaultRoute = /* @ngInject */ ($urlRouterProvider) => {
 
 export default angular.module('ZikaronBasalonFrontendAngular.routes', ['ui.router'])
   .config(defaultRoute)
-  // .config(homeRoutes)
   .config(staticRoutes)
-.config(registrationRoutes)
+  .config(hostSignupRoutes)
   .config(searchRoutes)
   .config(dashboardRoutes)
 ;
