@@ -5,7 +5,7 @@ export /* @ngInject */ function searchRoutes($stateProvider) {
         url: '/',
         templateUrl: '/states/search/search.html',
         controller: 'SearchController',
-        controllerAs: 'Search'
+        controllerAs: 'SearchController'
       })
   ;
 }

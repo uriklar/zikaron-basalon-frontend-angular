@@ -1,10 +1,17 @@
-<search-input></search-input>
-
-<div class="row">
-  <div class="col-xs-6">
-    <map></map>
+<div class="search-container">
+  <div class="search-filter-container">
+    <h3>מצא ערב זכרון בסלון</h3>
+    <p>טקסט הסבר TBD.... טקסט הסבר..... TBD....</p>
+    
+    <search-filter></search-filter>
   </div>
-  <div class="col-xs-6">
-    <host-list></host-list>
+
+  <div class="search-content-container">
+    <view-toggle selected="'map'"
+                 on-select="SearchController.viewToggled">
+
+    </view-toggle>
+    <map ng-if="SearchController.view === 'map'"></map>
+    <div ng-if="SearchController.view === 'list'">Host list</div>
   </div>
 </div>
