@@ -4,6 +4,7 @@ export function dashboardList() {
     templateUrl: 'components/dashboard/dashboard-list/dashboard-list.html',
     controller: class DashboardListController {
       constructor() {
+        this.filter = {};
         this.keys = [
           { val: 'name', name: 'שם' },
           { val: 'email', name: 'מייל' },
@@ -27,6 +28,10 @@ export function dashboardList() {
             public: true
           }
         ];
+      }
+
+      selectChanged() {
+        console.log(this.filter);
       }
     },
     controllerAs: 'DashboardList',

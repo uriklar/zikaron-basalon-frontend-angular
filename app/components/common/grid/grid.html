@@ -1,16 +1,16 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th ng-repeat="key in keys">
+      <th ng-repeat="key in Grid.keys">
         {{ key.name }}
       </th>
     </tr>
   </thead>
 
   <tbody>
-    <tr ng-repeat="row in data">
-      <td ng-repeat="key in keys">
-        {{ row[key.val] }}
+    <tr ng-repeat="row in Grid.data | filter:Grid.shouldShow(Grid.filter)">
+      <td ng-repeat="key in Grid.keys">
+        {{ Grid.renderField(row[key.val]) }}
       </td>
     </tr>
   </tbody>

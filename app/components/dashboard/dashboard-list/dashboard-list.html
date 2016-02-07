@@ -1,22 +1,24 @@
 <span>סנן לפי:</span>
-<select class="form-control">
-  <option value="" disabled selected>צריך איש עדות</option>
-  <option>צריך</option>
-  <option>לא צריך</option>
+<select class="form-control" ng-model="DashboardList.filter.survivor_needed">
+  <option value="" selected>צריך איש עדות</option>
+  <option value="true">צריך</option>
+  <option value="false">לא צריך</option>
 </select>
 
-<select class="form-control">
-  <option value="" disabled selected>צוות איש עדות</option>
-  <option>צוות</option>
-  <option>לא צוות</option>
+<select class="form-control" ng-model="DashboardList.filter.has_survivor">
+  <option value="" selected>צוות איש עדות</option>
+  <option value="true">צוות</option>
+  <option value="false">לא צוות</option>
 </select>
 
-<select class="form-control">
-  <option value="" disabled selected>ערב פתוח</option>
-  <option>פתוח</option>
-  <option>סגור</option>
+<select class="form-control" ng-model="DashboardList.filter.public">
+  <option value="" selected>ערב פתוח</option>
+  <option value="true">פתוח</option>
+  <option value="false">סגור</option>
 </select>
 
-<input type="text" class="form-control" placeholder="חיפוש לפי שם, כתובת, מייל">
+<input type="text" class="form-control"
+       placeholder="חיפוש לפי שם, כתובת, מייל"
+       ng-model="DashboardList.filter.text">
 
-<grid keys="DashboardList.keys" data="DashboardList.data"></grid>
+<grid keys="DashboardList.keys" data="DashboardList.data" filter="DashboardList.filter"></grid>
