@@ -1,7 +1,7 @@
 /**
  * Created by ranwahle on 07/02/2016.
  */
-export class HostedAndOrganizationController{
+export class PrevHostedAndOrganizationController{
     //@ngInject
     constructor(HostDetailsService){
         this._hostDetailsService = HostDetailsService;
@@ -20,4 +20,4 @@ export class HostedAndOrganizationController{
     }
 }
 
-HostedAndOrganizationController.$inject = ['HostDetailsService'];
+PrevHostedAndOrganizationController.$inject = ['HostDetailsService'];

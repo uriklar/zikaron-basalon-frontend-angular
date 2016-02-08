@@ -18,6 +18,12 @@ export /* @ngInject */ function hostSignupRoutes($stateProvider) {
         templateUrl: 'states/host-login/host-login.html',
         controller: 'HostLoginController',
         controllerAs: 'controller'
-    })
+    }).state('host-organization-prevhosting',{
+        url: '/host-organization-prevhosting',
+        templateUrl: 'states/host-organization-prevhosting/host-organization-prevhosting.html',
+        controller: 'PrevHostedAndOrganizationController',
+        controllerAs: 'controller'
+    }
+    )
     ;
 }

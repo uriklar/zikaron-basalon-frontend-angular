@@ -14,7 +14,7 @@ export /* @ngInject */ function registrationRoutes($stateProvider) {
         {
             url: '/hostedAndOrganization',
             templateUrl: '/states/hostedAndOrganization/hostedAndOrganization.html',
-            controller: 'HostedAndOrganizationController',
+            controller: 'PrevHostedAndOrganizationController',
             controllerAs: 'controller'
         });
 }

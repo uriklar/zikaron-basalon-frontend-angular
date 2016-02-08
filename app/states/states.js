@@ -3,7 +3,7 @@ import angular              from 'angular';
 import { SearchController } from 'states/search/search';
 import { DashboardController } from 'states/dashboard/dashboard';
 import {HostSignupController } from 'states/host-signup/host-signup';
-import {HostedAndOrganizationController} from 'states/hostedAndOrganization/hostedAndOrganization';
+import {PrevHostedAndOrganizationController} from 'states/host-organization-prevhosting/hostedAndOrganization';
 import {RegisterController} from 'states/register/register';
 import {HostLoginController} from 'states/host-login/HostLoginController';
 
@@ -13,6 +13,6 @@ export default angular.module('ZikaronBasalonFrontendAngular.controllers', [])
   .controller('DashboardController', DashboardController)
   .controller('HostSignupController', HostSignupController)
   .controller('RegisterController', RegisterController)
-  .controller('HostedAndOrganizationController', HostedAndOrganizationController)
-    .controller('HostLoginController', HostLoginController)
+ // .controller('HostedAndOrganizationController', HostedAndOrganizationController)
+    .controller('PreovHostedAndOrganizationController', PrevHostedAndOrganizationController)
 ;
