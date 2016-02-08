@@ -6,6 +6,7 @@ import { dashboardSummary } from 'components/dashboard/dashboard-summary/dashboa
 import { dashboardList } from 'components/dashboard/dashboard-list/dashboard-list';
 import { grid } from 'components/common/grid/grid';
 import { signupForm } from 'components/common/signup-form/signup-form';
+import { compareTo } from 'components/common/signup-form/compare-to';
 
 export default angular.module('ZikaronBasalonFrontendAngular.components', [])
   .directive('searchInput', searchInput)
@@ -15,4 +16,5 @@ export default angular.module('ZikaronBasalonFrontendAngular.components', [])
   .directive('dashboardList', dashboardList)
   .directive('grid', grid)
   .directive('signupForm', signupForm)
+  .directive('compareTo', compareTo)
 ;

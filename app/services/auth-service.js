@@ -16,14 +16,16 @@ class AuthService {
       { user: { email, password, password_confirmation } }
     )
     // Successful signup
-    .then(({ data }) => {
-      if (data.access_token) {
-        this._authStore.setAuthToken(data.access_token);
+    .then((response) => {
+      if (response.status >= 400) {
+        return Promise.reject(response);
       }
-    })
-    // Failed signup
-    .catch((response) => {
-      console.log(response);
+
+      if (response.data.access_token) {
+        this._authStore.setAuthToken(response.data.access_token);
+      }
+
+      return response;
     });
   }
 
