@@ -1,4 +1,44 @@
 <h1>הרשמה למארח זיכרון בסלון</h1>
 <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי. </p>
 
-<signup-form></signup-form>
+<!--<signup-form></signup-form>-->
+
+<div>
+
+    <form data-ng-submit="controller.register()" name="registrationForm" novalidate="novalidate">
+        <label for="txtFullName">שם מלא</label>
+        <br/>
+        <input type="text" id="txtFullName" data-ng-model="controller.fullName" placeholder="שם מלא" required/>
+        <br/>
+
+        <label for="txtEmail">
+            כתובת מייל
+        </label>
+        <br/>
+        <input type="email" id="txtEmail" data-ng-model="controller.email" required/>
+        <br/>
+        <label for="txtEmail2">
+            אישור כתובת מייל
+        </label>
+        <br/>
+        <input type="email" id="txtEmail2" data-ng-model="controller.email2" required/>
+        <br/>
+        <label for="password1">
+            סיסמא
+
+        </label>
+        <br/>
+        <input type="password" id="password1" data-ng-model="controller.password" required/>
+        <br/>
+        <label for="password2">
+            אישור סיסמא
+        </label>
+        <br/>
+        <input type="password" id="password2" data-ng-model="controller.password2" required/>
+        <br/>
+        <button type="submit">
+
+            המשך
+        </button>
+    </form>
+</div>

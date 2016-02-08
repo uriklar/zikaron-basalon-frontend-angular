@@ -1,12 +1,12 @@
 export class SearchController {
 
   // @ngInject
-  constructor(uiGmapGoogleMapApi) {
+  constructor(uiGmapGoogleMapApi, $log) {
     this.googleMaps = uiGmapGoogleMapApi;
 
-    this.googleMaps.then((maps) => console.log(maps));
+    this.googleMaps.then((maps) => $log.log(maps));
   }
 
 }
 
-SearchController.$inject = ['uiGmapGoogleMapApi'];
+SearchController.$inject = ['uiGmapGoogleMapApi', '$log'];

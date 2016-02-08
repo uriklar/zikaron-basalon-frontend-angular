@@ -18,6 +18,8 @@ import Config           from 'config/config';
 import Routes           from 'config/routes/routes';
 import States           from 'states/states';
 
+
+
 // Import all html files to put them in $templateCache
 // If you need to use lazy loading, you will probably need
 // to remove these two lines and explicitly require htmls
@@ -36,6 +38,8 @@ angular.module('ZikaronBasalonFrontendAngular', [
   Config.name,
   Routes.name,
   States.name
+
+
 ]);
 
 angular.element(document).ready(() =>

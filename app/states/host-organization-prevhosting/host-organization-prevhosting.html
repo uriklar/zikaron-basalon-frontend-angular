@@ -1,0 +1,56 @@
+<form data-ng-submit="controller.saveAdditionalDetails()">
+    <h1>
+        פרטים נוספים
+    </h1>
+    <label for="phoneNumberInput">
+        טלפון
+    </label>
+    <input type="tel" id="phoneNumberInput" data-ng-model="controller.phoneNumber"/>
+    <br>
+
+    האם אירחת פעם בערב זכרון בסלון?
+    <br/>
+    <input type="radio" name="hostedBefore" id="hostedNo" data-ng-model="controller.hostedBefore" data-ng-value="false"/>
+    <label for="hostedNo">
+        פעם ראשונה מארח/ת ערב זכרון בסלון
+    </label>
+    <br/>
+    <input type="radio" name="hostedBefore" id="hostedYes" data-ng-model="controller.hostedBefore" data-ng-value="true"/>
+    <label for="hostedYes">
+        אירחתי בעבר ערב זכרון בסלון
+    </label>
+
+    <br>
+
+    האם את/ה מייצג/ת ארגון?
+    <br/>
+    <input type="radio" id="notRepresentingOrganization" name="representingOrganization" data-ng-value="false"
+           data-ng-model="controller.representingOrganization">
+    <label for="notRepresentingOrganization">
+        לא
+    </label>
+    <br/>
+    <input type="radio" id="representingOrganization" name="representingOrganization" data-ng-value="true"
+           data-ng-model="controller.representingOrganization">
+    <label for="representingOrganization">
+        כן, אני מייצג/ת ארגון
+    </label>
+
+    <div data-ng-if="controller.representingOrganization">
+        <label for="txtOrganizationName">
+            שם הארגון
+        </label>
+        <br/>
+        <input type="text" id="txtOrganizationName" data-ng-model="controller.organizationName"/>
+        <br/>
+        <label for="txtRole">
+            תפקיד
+        </label>
+        <br/>
+        <input type="text" id="txtRole" data-ng-model="controller.organizationRole"/>
+    </div>
+    <br/>
+    <button type="submit">
+        המשך
+    </button>
+</form>

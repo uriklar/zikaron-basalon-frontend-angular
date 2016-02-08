@@ -1,0 +1,41 @@
+<div>
+    <h1>
+        הרשמה למארח/ת זיכרון בסלון
+    </h1>
+    <form data-ng-submit="controller.register()" name="registrationForm" novalidate="novalidate">
+    <label for="txtFullName">שם מלא</label>
+    <br/>
+    <input type="text" id="txtFullName" data-ng-model="controller.fullName" placeholder="שם מלא" required/>
+    <br/>
+
+    <label for="txtEmail">
+        כתובת מייל
+    </label>
+    <br/>
+    <input type="email" id="txtEmail" data-ng-model="controller.email" required/>
+    <br/>
+    <label for="txtEmail2">
+        אישור כתובת מייל
+    </label>
+    <br/>
+    <input type="email" id="txtEmail2" data-ng-model="controller.email2" required/>
+    <br/>
+    <label for="password1">
+        סיסמא
+
+    </label>
+    <br/>
+    <input type="password" id="password1" data-ng-model="controller.password" required/>
+    <br/>
+    <label for="password2">
+        אישור סיסמא
+    </label>
+    <br/>
+    <input type="password" id="password2" data-ng-model="controller.password2" required/>
+    <br/>
+    <button type="submit">
+
+        המשך
+    </button>
+    </form>
+</div>
