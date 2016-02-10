@@ -1,0 +1,44 @@
+<h2>
+    פרטים נוספים
+</h2>
+
+<form data-ng-submit="controller.saveSessionDetails()">
+    <label for="ddlLanguage">
+        השפה בה יתנהל הערב
+    </label>
+    <br/>
+    <select id="ddlLanguage" data-ng-model="controller.sessionLanguage">
+        <option value="1">עברית</option>
+        <option value="2">English</option>
+        <option value="3">العربية</option>
+    </select>
+    <br/>
+
+    <input type="checkbox" dataing-model="controller.needHelpFindingTestamonialPeople"
+    id="chkNeedFindingTestamonialPeople">
+    <label for="chkNeedFindingTestamonialPeople">
+ את/ה צריכ/ה עזרה במציאת אנשי עדות?
+    </label>
+<br/>
+
+    הערב יהיה
+    <input type="radio" name="sessionType" data-ng-model="controller.sessionType" data-ng-value="public"
+           id="rdSessionTypePublic">
+    <label for="rdSessionTypePublic">
+        פתוח
+    </label>
+    <input type="radio" name="sessionType" data-ng-model="controller.sessionType" data-ng-value="private"
+           id="rdSessionTypePrivate">
+    <label for="rdSessionTypePrivate">
+        פרטי
+    </label>
+
+    <br/>
+    <label for="txtAdditionalDetails">
+        עוד משהו שאנחנו צריכים לדעת
+    </label>
+    <br/>
+    <textarea data-ng-model="controller.additionalDetails" id="txtAdditionalDetails"></textarea>
+    <br/>
+    <button type="submit">המשך</button>
+</form>

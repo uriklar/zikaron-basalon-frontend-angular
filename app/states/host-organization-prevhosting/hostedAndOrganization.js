@@ -3,12 +3,14 @@
  */
 export class PrevHostedAndOrganizationController{
     //@ngInject
-    constructor(HostDetailsService){
+    constructor(HostDetailsService, $state){
         this._hostDetailsService = HostDetailsService;
+        this._$state = $state;
     }
 
     saveAdditionalDetails()
     {
+        var self = this;
         this._hostDetailsService.saveDetails({
             phone: this.phoneNumber,
             hostedBefore: this.hostedBefore,
@@ -16,8 +18,10 @@ export class PrevHostedAndOrganizationController{
             organizationName :this.organizationName,
             organizationRole: this.organizationRole
 
+        }).then(function(){
+            self._$state.go('sessionDetails');
         });
     }
 }
 
-PrevHostedAndOrganizationController.$inject = ['HostDetailsService'];
+PrevHostedAndOrganizationController.$inject = ['HostDetailsService', '$state'];

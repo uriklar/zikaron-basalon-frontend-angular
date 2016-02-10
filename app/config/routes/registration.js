@@ -16,5 +16,13 @@ export /* @ngInject */ function registrationRoutes($stateProvider) {
             templateUrl: '/states/hostedAndOrganization/hostedAndOrganization.html',
             controller: 'PrevHostedAndOrganizationController',
             controllerAs: 'controller'
-        });
+        }).state('sessionDetails',
+        {
+            url: '/sesionDetails',
+            templateUrl: '/states/session-details/session-details.html',
+            controller: 'SessionDetailsController',
+            controllerAs: 'controller'
+        }
+
+    );
 }

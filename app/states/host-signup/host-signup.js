@@ -15,7 +15,7 @@ export class HostSignupController {
         this.email, this.password, this.password2
     ).then(response => {
           self._$log.debug(response);
-          self._$state.$go('hostedAndOrganization');
+          self._$state.go('hostedAndOrganization');
         })
         .catch(response =>
             self._$log.debug(response)
