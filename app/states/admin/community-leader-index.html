@@ -1,0 +1,23 @@
+<h1>מובילי קהילות</h1>
+
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>מייל</th>
+    <th>ערים</th>
+    <th>נרשם?</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr ng-repeat="leader in ctrl.leaders"
+      ng-click="ctrl.editLeader(leader)">
+    <td>{{ leader.id }}</td>
+    <td>{{ leader.email }}</td>
+    <td>{{ ctrl.getCities(leader) }}</td>
+    <td>{{ ctrl.isSignedUp(leader) }}</td>
+  </tr>
+  </tbody>
+</table>

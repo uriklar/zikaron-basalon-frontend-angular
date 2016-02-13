@@ -1,0 +1,25 @@
+<form ng-submit="ctrl.submit()">
+  <div class="form-group">
+    <label for="email">מייל</label>
+    <input type="text" class="form-control"
+           id="email" placeholder="מייל"
+           ng-model="ctrl.form.email">
+    <p ng-if="ctrl.error">{{ctrl.error}}</p>
+  </div>
+
+  <div class="form-group" ng-show="ctrl.form.email">
+    <label for="city">עיר</label>
+    <input type="text" class="form-control"
+           id="city" placeholder="עיר"
+           ng-model="ctrl.cityInput">
+  </div>
+
+  <ul>
+    <li ng-repeat="city in ctrl.form.cities track by $index">
+      {{ city }}
+      <span ng-click="ctrl.removeCity(city)">X</span>
+    </li>
+  </ul>
+
+  <button type="submit">המשך</button>
+</form>

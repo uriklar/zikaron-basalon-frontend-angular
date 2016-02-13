@@ -6,15 +6,11 @@ class CommunityLeaderService {
   }
 
   getAll()  {
-    return this.$http.get(constants.APIEndpoints.COMMUNITY_LEADERS)
-      // Successful signup
-      .then(({ data }) => {
-        return data;
-      })
-      // Failed signup
-      .catch((response) => {
-        console.log(response);
-      });
+    return this.$http.get(constants.APIEndpoints.COMMUNITY_LEADERS);
+  }
+
+  get(id) {
+    return this.$http.get(`${constants.APIEndpoints.COMMUNITY_LEADERS}/${id}`);
   }
 
   create({ email, cities }) {
@@ -34,6 +30,26 @@ class CommunityLeaderService {
 
       return response;
     });
+  }
+
+  update({ email, cities, id }) {
+    return this.$http.put(
+      `${constants.APIEndpoints.COMMUNITY_LEADERS}/${id}`,
+      {
+        community_leader: {
+          id,
+          email,
+          cities: cities.join(',')
+        }
+      }
+      )
+      .then((response) => {
+        if (response.status >= 400) {
+          return Promise.reject(response);
+        }
+
+        return response;
+      });
   }
 }
 
