@@ -35,10 +35,8 @@ export class CreateCommunityLeaderController {
 
   submit() {
     this.communityLeaderService.create(this.form)
-    .catch(() => {
-      console.log(this.error, 'asdfasdf');
-      this.error = 'קיים מוביל קהילה עם כתובת המייל הזאת';
-    });
+    .then((response) => console.log(response))
+    .catch(() => this.error = 'קיים כבר מוביל קהילה עם המייל הזה');
   }
 
 }

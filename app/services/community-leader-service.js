@@ -26,7 +26,14 @@ class CommunityLeaderService {
           cities: cities.join(',')
         }
       }
-    ).then(({ data }) => data);
+    )
+    .then((response) => {
+      if (response.status >= 400) {
+        return Promise.reject(response);
+      }
+
+      return response;
+    });
   }
 }
 
