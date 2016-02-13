@@ -7,6 +7,7 @@ import {PrevHostedAndOrganizationController} from 'states/host-organization-prev
 import {RegisterController}                  from 'states/register/register';
 import {HostLoginController}                 from 'states/host-login/HostLoginController';
 import {SessionDetailsController}            from 'states/session-details/sessionDetails';
+import { CreateCommunityLeaderController }   from 'states/create-community-leader/create-community-leader';
 
 export default angular.module('ZikaronBasalonFrontendAngular.controllers', [])
 //  .controller('HomeController', HomeController)
@@ -17,5 +18,6 @@ export default angular.module('ZikaronBasalonFrontendAngular.controllers', [])
  // .controller('HostedAndOrganizationController', HostedAndOrganizationController)
     .controller('PrevHostedAndOrganizationController', PrevHostedAndOrganizationController)
 .controller('SessionDetailsController', SessionDetailsController)
+  .controller('CreateCommunityLeaderController', CreateCommunityLeaderController)
 
 ;

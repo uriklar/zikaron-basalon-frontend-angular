@@ -6,6 +6,7 @@ export const constants = {
   APIEndpoints: {
     LOGIN: $_API_URL + '/login',
     HOSTS: $_API_URL + '/hosts',
-    USERS: $_API_URL + '/users'
+    USERS: $_API_URL + '/users',
+    COMMUNITY_LEADERS: $_API_URL + '/community_leaders'
   }
 };

@@ -6,6 +6,7 @@ import { hostSignupRoutes } from 'config/routes/host-signup';
 import { searchRoutes } from 'config/routes/search';
 import { dashboardRoutes } from 'config/routes/dashboard';
 import {registrationRoutes} from 'config/routes/registration';
+import { adminRoutes } from 'config/routes/admin';
 
 const defaultRoute = /* @ngInject */ ($urlRouterProvider) => {
   $urlRouterProvider.otherwise('/404');
@@ -18,4 +19,5 @@ export default angular.module('ZikaronBasalonFrontendAngular.routes', ['ui.route
   .config(searchRoutes)
   .config(dashboardRoutes)
 .config(registrationRoutes)
+  .config(adminRoutes)
 ;

@@ -1,0 +1,29 @@
+<form ng-submit="ccl.submit()">
+  <div class="form-group">
+    <label for="email">מייל</label>
+    <input type="text" class="form-control"
+           id="email" placeholder="מייל"
+           ng-model="ccl.form.email">
+    <p ng-if="ccl.error">{{ccl.error}}</p>
+  </div>
+
+  <div class="form-group form-inline" ng-show="ccl.form.email">
+    <label for="city">עיר</label>
+    <input type="text" class="form-control"
+           id="city" placeholder="עיר"
+           ng-model="ccl.cityInput">
+    <input type="button"
+           class="button"
+           value="הוסף"
+           ng-click="ccl.addCity(ccl.cityInput)" />
+  </div>
+
+  <ul>
+    <li ng-repeat="city in ccl.form.cities">
+      {{ city }}
+      <span ng-click="ccl.removeCity(city)">X</span>
+    </li>
+  </ul>
+
+  <button type="submit">המשך</button>
+</form>
