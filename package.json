@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/uriklar/zikaron-basalon-frontend-angular"
   },
   "author": "",
   "license": "MIT",
@@ -25,7 +25,8 @@
     "angular-simple-logger": "^0.1.5",
     "angular-ui-router": "0.2.15",
     "bootstrap": "^3.3.6",
-    "bootstrap-rtl": "^3.3.1"
+    "bootstrap-rtl": "^3.3.1",
+    "lodash": "4.3.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "3.1.0",
