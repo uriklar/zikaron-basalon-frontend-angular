@@ -7,9 +7,6 @@ export /* @ngInject */ function hostSignupRoutes($stateProvider) {
         url: '/signup',
         templateUrl: 'states/host-signup/host-signup.html',
         controller: 'HostSignupController',
-        controllerAs: 'HostSignup',
-        resolve: {
-          host: (hostService)
-        }
+        controllerAs: 'HostSignup'
       });
 }
