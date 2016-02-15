@@ -11,7 +11,7 @@ class SignupFormController {
     this._authService.signUp(this.form.email,
                              this.form.password,
                              this.form.passwordConfirmation)
-      .then(() => this.$location.path('new-host'))
+      .then(() => this.$location.path(this.redirectPath))
       .catch(() => { this.error = true; });
 
   }
