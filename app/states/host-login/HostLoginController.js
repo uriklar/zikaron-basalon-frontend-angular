@@ -3,11 +3,23 @@
  */
 export class HostLoginController{
     //@ngInject
-    constructor(hostService){
-        this._hostService = hostService;
+    constructor(authService, $state, $log){
+        this._authService = authService;
+        this._$state = $state;
+        this._$log = $log;
     }
 
     login(){
+        var self = this;
+        this._authService.signIn(this.email, this.password).then((response) => {
+                self._$log.debug(response);
+                self._$state.go('hostedAndOrganization');
+            }
+        ).catch((response) =>{
+            self._$log.debug(response);
+        });
 
     }
 }
+
+HostLoginController.$inject = ['authService','$state', '$log'];

@@ -7,6 +7,8 @@ import {PrevHostedAndOrganizationController} from 'states/host-organization-prev
 import {RegisterController}                  from 'states/register/register';
 import {HostLoginController}                 from 'states/host-login/HostLoginController';
 import {SessionDetailsController}            from 'states/session-details/sessionDetails';
+import {SignoutController}                   from 'states/host-signout/host-signout';
+
 
 export default angular.module('ZikaronBasalonFrontendAngular.controllers', [])
 //  .controller('HomeController', HomeController)
@@ -14,8 +16,10 @@ export default angular.module('ZikaronBasalonFrontendAngular.controllers', [])
   .controller('DashboardController', DashboardController)
   .controller('HostSignupController', HostSignupController)
   .controller('RegisterController', RegisterController)
+      .controller('HostLoginController', HostLoginController)
  // .controller('HostedAndOrganizationController', HostedAndOrganizationController)
     .controller('PrevHostedAndOrganizationController', PrevHostedAndOrganizationController)
 .controller('SessionDetailsController', SessionDetailsController)
+.controller('SignOutController', SignoutController)
 
 ;

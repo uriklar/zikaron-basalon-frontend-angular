@@ -25,5 +25,10 @@ export /* @ngInject */ function hostSignupRoutes($stateProvider) {
         controllerAs: 'controller'
     }
     )
-    ;
+    .state('host-signout',{
+        url: '/hostSignOut',
+        templateUrl: '',
+        controller: 'SignOutController'
+    });
+
 }

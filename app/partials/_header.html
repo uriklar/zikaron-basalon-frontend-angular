@@ -1,5 +1,9 @@
 <!--header content-->
-<a ui-sref="host-signup">הרשמה</a>
-<a ui-sref="host-login">
+<a data-ng-if="!$root.isSignedIn" ui-sref="host-signup">הרשמה</a>
+<a data-ng-if="!$root.isSignedIn" ui-sref="host-login">
     התחברות
+</a>
+
+<a data-ng-if="$root.isSignedIn" ui-sref="host-signout">
+    התנתקות
 </a>

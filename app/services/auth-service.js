@@ -1,13 +1,30 @@
 import { constants } from 'config/constants';
 
 class AuthService {
-  constructor($http, authStore) {
+  constructor($http, authStore, $rootScope  ) {
     this.$http = $http;
     this._authStore = authStore;
+    this._$rootScope = $rootScope;
+
   }
 
   signedIn() {
-    return localStorage.getItem('ZBaccessToken');
+
+    var token = this._authStore.authToken();// localStorage.getItem('ZBaccessToken');
+    if (token)
+    {
+      this._$rootScope.isSignedIn = true;
+    }
+    else {
+      this._$rootScope.isSignedIn = false;
+    }
+
+    return token;
+  }
+
+  signOut(){
+    this._authStore.setAuthToken(null);
+    this._$rootScope.isSignedIn = false;
   }
 
   signUp(email, password, password_confirmation)  {
@@ -28,7 +45,7 @@ class AuthService {
   }
 
   signIn(email, password) {
-    this.$http.post(
+   var promise =  this.$http.post(
         constants.APIEndpoints.LOGIN,
         { email, password }
     ).then((response) => {
@@ -36,9 +53,11 @@ class AuthService {
     }).catch((response) => {
     //  console.log(response);
     });
+
+    return promise;
   }
 }
 
-AuthService.$inject = ['$http', 'authStore'];
+AuthService.$inject = ['$http', 'authStore','$rootScope'];
 
 export default AuthService;

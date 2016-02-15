@@ -13,7 +13,7 @@ export /* @ngInject */ function registrationRoutes($stateProvider) {
         ).state('hostedAndOrganization',
         {
             url: '/hostedAndOrganization',
-            templateUrl: '/states/hostedAndOrganization/hostedAndOrganization.html',
+            templateUrl: '/states/host-organization-prevhosting/host-organization-prevhosting.html',
             controller: 'PrevHostedAndOrganizationController',
             controllerAs: 'controller'
         }).state('sessionDetails',

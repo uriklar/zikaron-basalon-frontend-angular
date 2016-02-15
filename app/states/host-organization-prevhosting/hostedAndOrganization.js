@@ -3,9 +3,14 @@
  */
 export class PrevHostedAndOrganizationController{
     //@ngInject
-    constructor(HostDetailsService, $state){
+    constructor(authService, HostDetailsService, $state){
         this._hostDetailsService = HostDetailsService;
         this._$state = $state;
+
+        if (!authService.signedIn())
+        {
+            $state.go('host-signup');
+        }
     }
 
     saveAdditionalDetails()
@@ -24,4 +29,4 @@ export class PrevHostedAndOrganizationController{
     }
 }
 
-PrevHostedAndOrganizationController.$inject = ['HostDetailsService', '$state'];
+PrevHostedAndOrganizationController.$inject = ['authService','HostDetailsService', '$state'];
